@@ -6,9 +6,7 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE MultiParamTypeClasses #-}
 {-# LANGUAGE FunctionalDependencies #-}
-#if __GLASGOW_HASKELL__ >= 707
 {-# LANGUAGE RoleAnnotations #-}
-#endif
 
 -----------------------------------------------------------------------------
 -- |
@@ -288,11 +286,9 @@ instance Corepresentable p => Sellable p (Pretext p) where
 -- 'Silica.Getter.Getter'.
 newtype PretextT p (g :: * -> *) a b t = PretextT { runPretextT :: forall f. Functor f => p a (f b) -> f t }
 
-#if __GLASGOW_HASKELL__ >= 707
 -- really we want PretextT p g a b t to permit the last 3 arguments to be representational iff p and f accept representational arguments
 -- but that isn't currently an option in GHC
 type role PretextT representational nominal nominal nominal nominal
-#endif
 
 -- | @type 'PretextT'' p g a s = 'PretextT' p g a a s@
 type PretextT' p g a = PretextT p g a a

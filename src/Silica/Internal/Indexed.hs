@@ -6,10 +6,6 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 {-# LANGUAGE MultiParamTypeClasses #-}
 
-#if __GLASGOW_HASKELL__ < 708
-{-# LANGUAGE Trustworthy #-}
-#endif
-
 -----------------------------------------------------------------------------
 -- |
 -- Module      :  Silica.Internal.Indexed

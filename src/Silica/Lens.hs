@@ -17,9 +17,6 @@
 #define MIN_VERSION_mtl(x,y,z) 1
 #endif
 
-#if __GLASGOW_HASKELL__ < 708
-{-# LANGUAGE Trustworthy #-}
-#endif
 -------------------------------------------------------------------------------
 -- |
 -- Module      :  Silica.Lens

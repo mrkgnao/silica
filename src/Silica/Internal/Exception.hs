@@ -7,11 +7,9 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE FlexibleContexts #-}
 {-# LANGUAGE KindSignatures #-}
-#if defined(__GLASGOW_HASKELL__) && __GLASGOW_HASKELL__ >= 707
 {-# LANGUAGE ConstraintKinds #-}
 {-# LANGUAGE PolyKinds #-}
 {-# LANGUAGE RoleAnnotations #-}
-#endif
 
 #ifndef MIN_VERSION_base
 #define MIN_VERSION_base(x,y,z) 1
@@ -169,7 +167,6 @@ supply = unsafePerformIO $ newIORef 0
 
 -- | This permits the construction of an \"impossible\" 'Control.Exception.Handler' that matches only if some function does.
 newtype Handling a s (m :: * -> *) = Handling a
-#if defined(__GLASGOW_HASKELL__) && __GLASGOW_HASKELL__ >= 707
   deriving Typeable
 
 type role Handling representational nominal nominal

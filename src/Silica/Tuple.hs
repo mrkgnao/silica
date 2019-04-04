@@ -1187,14 +1187,12 @@ instance (p ~ GT (GSize s) n,
   gix = gix' (Proxy :: Proxy p)
   {-# INLINE gix #-}
 
-#if defined(__GLASGOW_HASKELL__) && __GLASGOW_HASKELL__ >= 706
 -- $gixed-fundeps
 -- >>> :set -XDeriveGeneric -XFlexibleInstances -XMultiParamTypeClasses
 -- >>> import GHC.Generics (Generic)
 -- >>> data Product a b = a :* b deriving Generic
 -- >>> instance Field1 (Product a b) (Product a' b) a a'
 -- >>> instance Field2 (Product a b) (Product a b') b b'
-#endif
 
 class (p ~ GT (GSize s) n,
        p ~ GT (GSize t) n)

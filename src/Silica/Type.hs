@@ -12,12 +12,8 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 {-# LANGUAGE MultiParamTypeClasses #-}
 {-# LANGUAGE KindSignatures #-}
-#if __GLASGOW_HASKELL__ >= 706
 {-# LANGUAGE PolyKinds #-}
-#endif
-#if __GLASGOW_HASKELL__ >= 800
 {-# LANGUAGE TypeInType #-}
-#endif
 -------------------------------------------------------------------------------
 -- |
 -- Module      :  Silica.Type
@@ -107,9 +103,7 @@ import Data.Bifunctor
 import Data.Functor.Identity
 import Data.Functor.Contravariant
 import Data.Functor.Apply
-#if __GLASGOW_HASKELL__ >= 800
 import Data.Kind
-#endif
 import Data.Profunctor
 import Data.Tagged
 import Prelude
@@ -443,13 +437,7 @@ type R_Prism' s a = R_Prism s s a a
 -- | A witness that @(a ~ s, b ~ t)@.
 --
 -- Note: Composition with an 'R_Equality' is index-preserving.
-#if __GLASGOW_HASKELL__ >= 800
 type R_Equality (s :: k1) (t :: k2) (a :: k1) (b :: k2) = forall k3 (p :: k1 -> k3 -> *) (f :: k2 -> k3) .
-#elif __GLASGOW_HASKELL__ >= 706
-type R_Equality (s :: k1) (t :: k2) (a :: k1) (b :: k2) = forall (p :: k1 -> * -> *) (f :: k2 -> *) .
-#else
-type R_Equality s t a b = forall p (f :: * -> *) .
-#endif
     p a (f b) -> p s (f t)
 
 -- | A 'Simple' 'R_Equality'.
