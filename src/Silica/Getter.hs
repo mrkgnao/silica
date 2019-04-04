@@ -89,6 +89,7 @@ module Silica.Getter
 import Control.Applicative
 import Silica.Internal.Indexed
 import Silica.Type
+import Silica.Raw
 import Control.Monad.Reader.Class as Reader
 import Control.Monad.State        as State
 import Control.Monad.Writer       as Writer

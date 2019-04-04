@@ -86,6 +86,7 @@ import Control.Comonad
 import Silica.Internal.Indexed
 import Silica.Internal.Setter
 import Silica.Type
+import Silica.Raw
 import Control.Monad (liftM)
 import Control.Monad.State.Class as State
 import Control.Monad.Writer.Class as Writer

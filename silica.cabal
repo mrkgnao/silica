@@ -29,6 +29,7 @@ library
                      , Silica.Type
                      , Silica.Getter
                      , Silica.Tuple
+                     , Silica.Raw
   -- other-modules:       
   -- other-extensions:    
   hs-source-dirs:      src

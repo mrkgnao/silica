@@ -126,6 +126,7 @@ import Silica.Internal.Context
 import Silica.Internal.Getter
 import Silica.Internal.Indexed
 import Silica.Type
+import Silica.Raw
 import Control.Monad.State as State
 import Data.Functor.Yoneda
 import Data.Monoid
